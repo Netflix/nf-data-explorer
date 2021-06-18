@@ -1,0 +1,6 @@
+{
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true
+}

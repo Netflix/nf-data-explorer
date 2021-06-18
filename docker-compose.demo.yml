@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    image: nfdataexplorer:1.0.0
+    hostname: app
+    depends_on:
+      - cassandra
+      - redis
+    ports:
+      - '80:80'
+    command: yarn start
+    networks:
+      - appnet
+    env_file:
+      - .env
+    environment:
+      - CASSANDRA_HOST=cassandra
+      - REDIS_HOST=redis
+    volumes:
+      - ${PWD}/data:/apps/nf-data-explorer/data
+
+  cassandra:
+    image: cassandra:3.11.9
+    hostname: cassandra
+    ports:
+      - '9042:9042'
+    networks:
+      - appnet
+
+  redis:
+    image: redis:6.0.9
+    hostname: redis
+    ports:
+      - '6379:6379'
+    networks:
+      - appnet
+
+networks:
+  appnet:

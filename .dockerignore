@@ -1,0 +1,17 @@
+# deny list everything
+*
+
+# selectively allow
+!src/**
+!jest*.js
+!jest*.ts
+!README.md
+!package.json
+!ts*.json
+!yarn.lock
+!schema/**
+!gulpfile.js
+
+# exclude any special folders
+**/dist
+src/server/public

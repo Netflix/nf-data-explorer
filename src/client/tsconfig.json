@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": false,
+    "types": ["webpack-env", "jest", "node"],
+    "paths": {
+      "@/*": ["src/*"],
+      "@sharedtypes/*": ["../server/typings/*"],
+      "@cassandratypes/*": [
+        "../server/services/datastores/cassandra/typings/*"
+      ],
+      "@dynomitetypes/*": ["../server/services/datastores/dynomite/typings/*"]
+    },
+    "lib": ["ES2020.String", "esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": ["node_modules"]
+}

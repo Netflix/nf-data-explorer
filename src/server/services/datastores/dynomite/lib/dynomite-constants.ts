@@ -1,0 +1,1 @@
+export const MAX_KEY_STRING_SIZE_CHARS = 100000;

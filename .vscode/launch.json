@@ -1,0 +1,74 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceRoot}/dist/index.js",
+      "smartStep": true,
+      "protocol": "inspector",
+      "console": "integratedTerminal",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "development",
+        "NODE_PATH": "${workspaceRoot}/dist",
+        "DATA_EXPLORER_CONFIG_NAME": "custom-config",
+        "CASSANDRA_HOST": "localhost",
+        "REDIS_HOST": "localhost"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Data Explorer",
+      "program": "${workspaceRoot}/dist/index.js",
+      "smartStep": true,
+      "protocol": "inspector",
+      "console": "internalConsole",
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "development",
+        "NODE_PATH": "${workspaceRoot}/dist",
+        "DATA_EXPLORER_CONFIG_NAME": "custom-config",
+        "CASSANDRA_HOST": "localhost",
+        "REDIS_HOST": "localhost"
+      }
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Data Explorer",
+      "port": 9229
+    },
+    {
+      "name": "Debug Jest Server Tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "--inspect-brk",
+        "${workspaceRoot}/node_modules/.bin/jest",
+        "--runInBand"
+      ],
+      "outFiles": ["${workspaceRoot}/dist/**/*.js"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229
+    },
+    {
+      "name": "Debug Jest Client Tests",
+      "cwd": "${workspaceRoot}/src/client",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "--inspect-brk",
+        "${workspaceRoot}/src/client/node_modules/.bin/jest",
+        "--runInBand"
+      ],
+      "outFiles": ["${workspaceRoot}/src/client/dist/**/*.js"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229
+    }
+  ]
+}

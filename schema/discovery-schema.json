@@ -1,0 +1,285 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://nfdataexplorer.com/discovery.json",
+  "type": "array",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": [],
+  "examples": [
+    [
+      {
+        "name": "TEST",
+        "env": "test",
+        "region": "us-east-1",
+        "datastoreType": "cassandra",
+        "instances": [
+          {
+            "az": "us-east-1d",
+            "hostname": "x",
+            "ip": "10.1.2.3",
+            "region": "us-east-1",
+            "status": "UP",
+            "stack": null
+          },
+          {
+            "az": "us-east-1e",
+            "hostname": "x",
+            "ip": "10.1.2.3",
+            "region": "us-east-1",
+            "status": "UP",
+            "stack": null
+          },
+          {
+            "az": "us-east-1e",
+            "hostname": "x",
+            "ip": "10.1.2.3",
+            "region": "us-east-1",
+            "status": "UP",
+            "stack": null
+          },
+          {
+            "az": "us-east-1d",
+            "hostname": "x",
+            "ip": "10.1.2.3",
+            "region": "us-east-1",
+            "status": "UP",
+            "stack": null
+          },
+          {
+            "az": "us-east-1c",
+            "hostname": "x",
+            "ip": "10.1.2.3",
+            "region": "us-east-1",
+            "status": "UP",
+            "stack": null
+          },
+          {
+            "az": "us-east-1c",
+            "hostname": "x",
+            "ip": "10.1.2.3",
+            "region": "us-east-1",
+            "status": "UP",
+            "stack": null
+          }
+        ]
+      }
+    ]
+  ],
+  "additionalItems": true,
+  "items": {
+    "$id": "#/items",
+    "anyOf": [
+      {
+        "$id": "#/items/anyOf/0",
+        "type": "object",
+        "title": "The first anyOf schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": {},
+        "examples": [
+          {
+            "name": "TEST",
+            "env": "test",
+            "region": "us-east-1",
+            "datastoreType": "cassandra",
+            "instances": [
+              {
+                "az": "us-east-1d",
+                "hostname": "x",
+                "ip": "10.1.2.3",
+                "region": "us-east-1",
+                "status": "UP",
+                "stack": null
+              },
+              {
+                "az": "us-east-1e",
+                "hostname": "x",
+                "ip": "10.1.2.3",
+                "region": "us-east-1",
+                "status": "UP",
+                "stack": null
+              },
+              {
+                "az": "us-east-1e",
+                "hostname": "x",
+                "ip": "10.1.2.3",
+                "region": "us-east-1",
+                "status": "UP",
+                "stack": null
+              },
+              {
+                "az": "us-east-1d",
+                "hostname": "x",
+                "ip": "10.1.2.3",
+                "region": "us-east-1",
+                "status": "UP",
+                "stack": null
+              },
+              {
+                "az": "us-east-1c",
+                "hostname": "x",
+                "ip": "10.1.2.3",
+                "region": "us-east-1",
+                "status": "UP",
+                "stack": null
+              },
+              {
+                "az": "us-east-1c",
+                "hostname": "x",
+                "ip": "10.1.2.3",
+                "region": "us-east-1",
+                "status": "UP",
+                "stack": null
+              }
+            ]
+          }
+        ],
+        "required": ["name", "env", "region", "datastoreType", "instances"],
+        "properties": {
+          "name": {
+            "$id": "#/items/anyOf/0/properties/name",
+            "type": "string",
+            "title": "The cluster name",
+            "description": "Name of the cluster to connect to.",
+            "default": "",
+            "examples": ["TEST"]
+          },
+          "env": {
+            "$id": "#/items/anyOf/0/properties/env",
+            "type": "string",
+            "title": "The cluster environment",
+            "description": "Describes the type of environment the cluster is deployed in.",
+            "default": "",
+            "enum": ["prod", "test"],
+            "examples": ["prod", "test"]
+          },
+          "region": {
+            "$id": "#/items/anyOf/0/properties/region",
+            "type": "string",
+            "title": "The cluster region.",
+            "description": "Identifies which AWS region the cluster resides in.",
+            "default": "",
+            "examples": ["us-east-1"]
+          },
+          "datastoreType": {
+            "$id": "#/items/anyOf/0/properties/datastoreType",
+            "type": "string",
+            "title": "The type of datastore.",
+            "description": "The type of datastore. Controls how the Data Explorer groups datastores and connects to the cluster.",
+            "default": "",
+            "examples": ["cassandra", "dynomite"]
+          },
+          "instances": {
+            "$id": "#/items/anyOf/0/properties/instances",
+            "type": "array",
+            "title": "The list of instances (nodes).",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+              [
+                {
+                  "az": "us-east-1d",
+                  "hostname": "x",
+                  "ip": "10.1.2.3",
+                  "region": "us-east-1",
+                  "status": "UP",
+                  "stack": null
+                },
+                {
+                  "az": "us-east-1e",
+                  "hostname": "x",
+                  "ip": "10.1.2.3",
+                  "region": "us-east-1",
+                  "status": "UP",
+                  "stack": null
+                }
+              ]
+            ],
+            "additionalItems": true,
+            "items": {
+              "$id": "#/items/anyOf/0/properties/instances/items",
+              "anyOf": [
+                {
+                  "$id": "#/items/anyOf/0/properties/instances/items/anyOf/0",
+                  "type": "object",
+                  "title": "The first anyOf schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": {},
+                  "examples": [
+                    {
+                      "az": "us-east-1d",
+                      "hostname": "x",
+                      "ip": "10.1.2.3",
+                      "region": "us-east-1",
+                      "status": "UP",
+                      "stack": null
+                    }
+                  ],
+                  "required": [
+                    "az",
+                    "hostname",
+                    "ip",
+                    "region",
+                    "status",
+                    "stack"
+                  ],
+                  "properties": {
+                    "az": {
+                      "$id": "#/items/anyOf/0/properties/instances/items/anyOf/0/properties/az",
+                      "type": "string",
+                      "title": "Instance availability zone.",
+                      "description": "Identifies which AZ this node resides in.",
+                      "default": "",
+                      "examples": ["us-east-1d"]
+                    },
+                    "hostname": {
+                      "$id": "#/items/anyOf/0/properties/instances/items/anyOf/0/properties/hostname",
+                      "type": "string",
+                      "title": "Instance hostname.",
+                      "description": "Mostly used for debugging purposes.",
+                      "default": "",
+                      "examples": ["x"]
+                    },
+                    "ip": {
+                      "$id": "#/items/anyOf/0/properties/instances/items/anyOf/0/properties/ip",
+                      "type": "string",
+                      "title": "Instance IP address.",
+                      "description": "The IP address of the node to connect to.",
+                      "default": "",
+                      "examples": ["10.1.2.3"]
+                    },
+                    "region": {
+                      "$id": "#/items/anyOf/0/properties/instances/items/anyOf/0/properties/region",
+                      "type": "string",
+                      "title": "The instances's region.",
+                      "description": "Indicates the node's AWS region. Must be the same as the region defined on the containing cluster block.",
+                      "default": "",
+                      "examples": ["us-east-1"]
+                    },
+                    "status": {
+                      "$id": "#/items/anyOf/0/properties/instances/items/anyOf/0/properties/status",
+                      "type": "string",
+                      "title": "The instance status.",
+                      "description": "Indicates the status of the instance. The Data Explorer will only attempt to connect to \"UP\" nodes.",
+                      "default": "",
+                      "examples": ["UP"]
+                    },
+                    "stack": {
+                      "$id": "#/items/anyOf/0/properties/instances/items/anyOf/0/properties/stack",
+                      "type": ["string", "null"],
+                      "title": "The instance stack.",
+                      "description": "If an application has multiple stacks deployed (e.g. \"DEV\"), this property can be used to separate them (may require custom code).",
+                      "default": null,
+                      "examples": [null]
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    ]
+  }
+}

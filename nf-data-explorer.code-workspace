@@ -1,0 +1,43 @@
+{
+  "folders": [
+    {
+      "path": "src/client"
+    },
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "vetur.format.defaultFormatter.html": "none",
+    "vetur.format.defaultFormatter.css": "none",
+    "vetur.format.defaultFormatter.postcss": "none",
+    "vetur.format.defaultFormatter.scss": "none",
+    "vetur.format.defaultFormatter.less": "none",
+    "vetur.format.defaultFormatter.stylus": "none",
+    "vetur.format.defaultFormatter.js": "none",
+    "vetur.format.defaultFormatter.ts": "prettier",
+    "files.trimTrailingWhitespace": true,
+    "element-helper.version": "2.0",
+    "element-helper.language": "en-US",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "eslint.enable": true,
+    "eslint.validate": [
+      "javascript",
+      "typescript"
+    ],
+    "json.schemas": [
+      {
+        "fileMatch": [
+          "*discovery.json"
+        ],
+        "url": "./schema/discovery-schema.json"
+      }
+    ]
+  },
+  "extensions": {
+    "recommendations": ["octref.vetur", "esbenp.prettier-vscode", "dbaeumer.vscode-eslint"]
+  },
+}
